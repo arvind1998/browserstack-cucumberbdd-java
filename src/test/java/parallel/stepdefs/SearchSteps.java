@@ -25,8 +25,8 @@ public class SearchSteps {
 
     @Before
     public void setUp(Scenario scenario) throws MalformedURLException {
-        String USERNAME = "BROWSERSTACK_USERNAME";
-        String ACCESS_KEY = "BROWSERSTACK_ACCESS_KEY";
+        String USERNAME = System.getenv("BROWSERSTACK_USERNAME");
+        String ACCESS_KEY = System.getenv("BROWSERSTACK_ACCESS_KEY");
         String URL = "https://" + USERNAME + ":" + ACCESS_KEY + "@hub.browserstack.com/wd/hub";
         caps = new DesiredCapabilities();
         String device = Reporter.getCurrentTestResult().getTestContext().getCurrentXmlTest().getParameter("device");
